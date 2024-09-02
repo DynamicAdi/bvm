@@ -1,0 +1,40 @@
+@import "./../same";
+
+.main {
+    @include full($h: auto);
+    position: relative;
+    .wave {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        // height: 80%;
+
+        .svg { 
+            @include media(mobile) {
+                height: 16rem;
+            }
+            @include media(tablet) {
+                height: 20rem;
+            }
+        }
+    }
+    .upperSection{
+        .title {
+            color: white;
+           
+        }
+        .desc {
+            color: white;
+        }
+}
+
+.cards {
+    width: 100%;
+    // height: 80%;
+    // background-color: black;
+    @include flex(flex-start);
+    padding: 10rem 3rem 2rem;
+    gap: 2rem;
+
+}
+}

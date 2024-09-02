@@ -1,0 +1,107 @@
+@mixin full($w: 100vw, $h: 100vh) {
+    width: $w;
+    height: $h;
+  }
+  
+  @mixin flex($jc: center, $ai: center, $fd: row, $fw: wrap) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+    flex-wrap: $fw;
+
+  }
+  
+  
+  $color: #dddddd;;
+  
+  $breakpoints: (
+  mobile : 0px, 
+  tablet : 589px,
+  desktop: 899px,
+);
+
+  $maxPoints: (
+      mobile: 590px,
+      tablet: 1023px,
+    desktop: 2080px
+  
+  );
+  
+  @mixin media($keys...) {
+      @each $key in $keys {
+          @media screen and (min-width: map-get($breakpoints, $key)) and (max-width: map-get($maxPoints, $key)) {
+              @content;
+          }
+      }
+  }
+// Color platte
+
+$white: #ffffff;
+$fogy: #dadada; 
+$black: rgb(20, 21, 23);
+$primary: #ff8000;
+$secondary: #f0db00;
+$clicke: #ff000e;
+
+// common styles
+.title {
+  font-family: var(--secondary-font);
+font-size: 4rem;
+color: black;
+font-weight: 700;
+padding: 1rem 1rem 0rem;
+border-bottom: 2px solid currentColor;
+width: fit-content;
+line-height: 95%;
+@include media(mobile) {
+  font-size: 2.5rem;
+}
+&::before {
+  content: '+ ';
+  font-weight: 300;
+}
+span {
+  font-weight: 300;
+}
+}
+.desc {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  color: black;
+  padding: 0.4rem 0.6rem 0rem;
+  width: 80%;
+  line-height: 150%;
+  @include media(mobile) {
+    font-size: 1.3rem;
+    width: 100%;
+  font-weight: 500;
+}
+}
+
+.editIcon {
+  margin-top: 7px;
+background-color: rgba($color: white, $alpha: 0.5);
+padding: 0.4rem 0.6rem;
+border-radius: 10px;
+color: white;
+font-size: 2.8rem;
+cursor: pointer;
+&.down {
+  margin-top: 0;
+  padding: 0.4rem;
+  font-size: 2.2rem;
+  border-radius: 8px;
+}
+&:hover {
+    filter: brightness(90%);
+  }
+  &.disabled {
+    cursor: not-allowed;
+    // filter: brightness(50%);
+    opacity: 0.5;
+    &:hover {
+      filter: brightness(100%);
+    }
+}
+}

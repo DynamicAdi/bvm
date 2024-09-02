@@ -1,0 +1,145 @@
+@import "./../same";
+.adminpannel {
+    @include full();
+    background: linear-gradient(165deg, #70159a 0%, #6411ca 48%, #180059 100%);
+    @include flex();
+    padding: 0px 12px;
+    .sideBar {
+        width: 20%;
+        height: 95%;
+        background-color: rgba($color: whitesmoke, $alpha: 0.2);
+        backdrop-filter: blur(3px);
+        color: white;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        
+        .title {
+            width: 100%;
+            font-size: 2.1rem;
+            border-bottom: none;
+            color: white;
+            &::before {
+                content: '';
+            }
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            font-family: var(--secondary-font);
+            padding: 0rem 1rem;
+            
+        }
+        .icons {
+
+        @include flex(flex-end, flex-end);
+        padding: 1rem 0.6rem 0px;
+        gap: 15px;
+            .editIcon {
+                // position: absolute;
+            background-color: rgba($color: rgb(239, 239, 60), $alpha: 1);
+            border-radius: 10px;
+            font-size: 2.8rem;
+            cursor: pointer;
+            transform: 0.4s all ease;
+            &:hover {
+                filter: brightness(80%);
+            }
+            
+        }
+    }
+        .list {
+            list-style: none;
+            @include flex(center, flex-start, column);
+            gap: 1rem;
+            padding: 2rem 0px;
+            li {
+                cursor: pointer;
+                padding: 0.5rem 1.6rem;
+                font-size: 1.4rem;
+                font-weight: 300;
+                font-family: var(--secondary-font);
+                position: relative;
+                transition: 0.3s all ease;
+                @include flex();
+                gap: 10px;
+
+            .del {
+                cursor: pointer;
+                outline: none;
+                border: none;
+                background: none;
+                .outline {
+                    margin: 0;
+                    padding: 0px 0.2rem 0px;
+                    font-size: 1.8rem;
+                    background: none;
+                    transform: 0.3s all ease;
+                    background-color: rgba($color: red, $alpha: 0.5);
+                    &:hover {
+                        background: rgba($color: #ffffff, $alpha: 0.5);
+                    }
+                }
+            }
+            &::after {
+                width: 0%;
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius:0px 50px 50px 0px;
+                z-index: -1;
+                background-color: rgba($color: white, $alpha: 0.4);
+                transition: 0.6s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:hover {
+                transform: scale(1.05);
+                // &::after {
+                //     width: 100%;
+
+                // }
+            }
+            &:active {
+                filter: brightness(85%);
+            }
+            &.activate {
+                &::after {
+                    width: 100%;
+                }
+            }
+            }
+
+        }
+    }
+    .child {
+        margin-left: 15px;
+        border-radius: 15px;
+        width: 76%;
+        height: 95%;
+        background-color: rgba($color: #ffffff, $alpha: 0.2);
+        backdrop-filter: blur(3px);
+        overflow: hidden;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 8px;
+          }
+          /* Track */
+        &::-webkit-scrollbar-track {
+          background: #ffffff50;
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #2323236f;
+        }
+
+    .center {
+        width: 100%;
+        height: 100%;
+        @include flex($fd: column);
+        h2 {
+            font-size: 30px;
+            color: white;
+        }
+    }
+    }
+}

@@ -1,0 +1,131 @@
+@import "./../same";
+
+.bg {
+    @include full();
+    position: relative;
+
+.spot {
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    z-index: -2;
+    inset: 6%;
+    left: 50%;
+    @include media(mobile) {
+        left: 0%;
+        top: 50%;
+        width: 100%;
+        height: 25rem;
+    }
+    @include media(tablet) {
+        left: 0%;
+        top: 40%;
+        width: 100%;
+    }
+}
+.spot2 {
+    width: 33rem;
+    height: 33rem;
+    inset: 27.5%;
+    left: 54%;
+    @include media(mobile) {
+        left: 8%;
+        top: 60.5%;
+        width: 20rem;
+        height: 20rem;
+    }
+    @include media(tablet) {
+        left: 9rem;
+        top: 60.5%;
+        // width: 25rem;
+        // height: 25rem;
+    
+    }
+}
+
+
+.bubbles {
+    position: absolute;
+    width: max-content;
+    padding: 1rem 1.5rem;
+    height: fit-content;
+    inset: 48%;
+    border-radius: 14px;
+    // background-color: $fogy;
+    box-shadow: 0px 0px 13px rgba($color: #0c0c0c, $alpha: 0.4);
+    background: linear-gradient(195deg, $primary, #fecf78);
+    @include flex();
+    @include media(mobile) {
+        padding: 0.5rem 1rem;
+        left: 3%;
+        top: 78%;
+        // dislay: none;
+
+    }
+    @include media(tablet) {
+        left: 3%;
+        top: 70%;
+    }
+    .section {
+        @include media(mobile) {
+            // display: none;
+        }
+        @include flex($fd: column);
+        color: white;  
+        h2 {
+            font-size: 1.6rem;
+            color: $white;
+            font-weight: 800;
+            @include media(mobile) {
+                font-weight: 800;
+                font-size: 1.3rem;
+            }
+        }
+    }
+    &.bubbles2 {
+        top: 35%;
+        left: 80%;
+        background: linear-gradient(195deg, $clicke, #fc9a9a);
+        @include media(mobile) {
+            top: 85%;
+            left: 50%;
+            // display: none;
+        }
+        @include media(tablet) {
+            top: 60%;
+            left: 65%;
+        }
+    }
+    &.bubbles3 {
+        top: 15%;
+        left: 50%;
+        background: linear-gradient(195deg, rgb(0, 170, 170), rgb(97, 193, 193));
+        @include media(mobile) {
+            top: 55%;
+            left: 2%;
+            // display: none;
+        }
+        @include media(tablet) {
+            top: 50%;
+            left: 15%;
+        
+        }
+    }
+    &.bubbles4 {
+        top: 70%;
+        left: 80%;
+    background: linear-gradient(195deg, #6200ff, #a065ff);
+    @include media(mobile) {
+        top: 70%;
+        left: 50%;
+        // display: none;
+    }
+    @include media(tablet) {
+        top: 85%;
+        left: 65%;
+    }
+
+    }
+
+}
+}

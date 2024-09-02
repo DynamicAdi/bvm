@@ -1,0 +1,219 @@
+.title {
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  color: black;
+  font-weight: 700;
+  padding: 1rem 1rem 0rem;
+  border-bottom: 2px solid currentColor;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 95%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+.title::before {
+  content: "+ ";
+  font-weight: 300;
+}
+.title span {
+  font-weight: 300;
+}
+
+.desc {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  color: black;
+  padding: 0.4rem 0.6rem 0rem;
+  width: 80%;
+  line-height: 150%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .desc {
+    font-size: 1.3rem;
+    width: 100%;
+    font-weight: 500;
+  }
+}
+
+.editIcon {
+  margin-top: 7px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 2.8rem;
+  cursor: pointer;
+}
+.editIcon.down {
+  margin-top: 0;
+  padding: 0.4rem;
+  font-size: 2.2rem;
+  border-radius: 8px;
+}
+.editIcon:hover {
+  filter: brightness(90%);
+}
+.editIcon.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.editIcon.disabled:hover {
+  filter: brightness(100%);
+}
+
+.mainContainer {
+  width: 70%;
+  height: 27rem;
+  background: whitesmoke;
+  border-radius: 10px;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.8);
+  transition: 0.3s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.mainContainer .cross {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  font-size: 1.8rem;
+  transition: 0.2s all ease-in-out;
+}
+.mainContainer .cross:hover {
+  cursor: pointer;
+  background-color: #e93434;
+  color: whitesmoke;
+}
+.mainContainer .children {
+  padding: 1rem 1.5rem;
+}
+.mainContainer .children .upperHead {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mainContainer .children .upperHead .left .heading {
+  font-size: 1.8rem;
+  color: rgb(20, 21, 23);
+}
+.mainContainer .children .upperHead .right .popup {
+  border-radius: 12px;
+  width: 14rem;
+  height: 5rem;
+  background: #dadada;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0px 1rem;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+}
+.mainContainer .children .upperHead .right .popup.visible {
+  opacity: 1;
+}
+.mainContainer .children .upperHead .right .popup h3 {
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.mainContainer .children .upperHead .right .popup .icon {
+  width: 21%;
+  height: 50%;
+  padding: 8px 8px;
+  border-radius: 50%;
+  background: limegreen;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: 500;
+}
+.mainContainer .children form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 2rem 0px;
+}
+.mainContainer .children form .up {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.mainContainer .children form .up .side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.mainContainer .children form .up .side .uploadedImage {
+  width: 15rem;
+  height: 5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+.mainContainer .children form .up input,
+.mainContainer .children form .up textarea {
+  resize: none;
+  width: 15rem;
+  padding: 0.7rem;
+  overflow-x: auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #dadada;
+  outline: none;
+  font-size: 1rem;
+}
+.mainContainer .children form .up input::-webkit-outer-spin-button, .mainContainer .children form .up input::-webkit-inner-spin-button,
+.mainContainer .children form .up textarea::-webkit-outer-spin-button,
+.mainContainer .children form .up textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mainContainer .children form .up textarea {
+  width: 30rem;
+  height: 13rem;
+}
+.mainContainer .children form .up .imgText {
+  width: 15rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  inset: 30%;
+  left: 0;
+}
+.mainContainer .children form .buttons .outline {
+  margin: 1rem 0.2rem;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.2rem;
+  background-color: #ff8000;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.mainContainer .children form .buttons .outline:hover {
+  background-color: black;
+}

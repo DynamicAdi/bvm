@@ -1,0 +1,189 @@
+.title {
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  color: black;
+  font-weight: 700;
+  padding: 1rem 1rem 0rem;
+  border-bottom: 2px solid currentColor;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 95%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+.title::before {
+  content: "+ ";
+  font-weight: 300;
+}
+.title span {
+  font-weight: 300;
+}
+
+.desc {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  color: black;
+  padding: 0.4rem 0.6rem 0rem;
+  width: 80%;
+  line-height: 150%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .desc {
+    font-size: 1.3rem;
+    width: 100%;
+    font-weight: 500;
+  }
+}
+
+.editIcon {
+  margin-top: 7px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 2.8rem;
+  cursor: pointer;
+}
+.editIcon.down {
+  margin-top: 0;
+  padding: 0.4rem;
+  font-size: 2.2rem;
+  border-radius: 8px;
+}
+.editIcon:hover {
+  filter: brightness(90%);
+}
+.editIcon.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.editIcon.disabled:hover {
+  filter: brightness(100%);
+}
+
+.footer {
+  width: 100vw;
+  height: 50vh;
+  background-color: #ff8000;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .footer {
+    height: auto;
+    padding-bottom: 10px;
+  }
+}
+.footer .wave {
+  background-color: transparent;
+  display: block;
+  height: 80px;
+  position: relative;
+  top: -1px;
+  width: 100%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .footer .wave {
+    height: 50px;
+  }
+}
+.footer .footerContent {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .footer .footerContent {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 3%;
+    gap: 30px;
+  }
+}
+.footer .footerContent .logo, .footer .footerContent .quickLinks {
+  width: 30%;
+}
+@media screen and (min-width: 0px) and (max-width: 590px) {
+  .footer .footerContent .logo, .footer .footerContent .quickLinks {
+    width: 100%;
+  }
+}
+.footer .footerContent .logo h1, .footer .footerContent .quickLinks h1 {
+  font-weight: 800;
+  color: white;
+  font-size: 2.5rem;
+}
+.footer .footerContent .logo p, .footer .footerContent .quickLinks p {
+  font-family: var(--secondary-font);
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+}
+.footer .footerContent .logo input, .footer .footerContent .quickLinks input {
+  width: 50%;
+  height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-top: 10px;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  font-weight: 300;
+  background-color: rgba(240, 219, 0, 0.5);
+  color: white;
+}
+.footer .footerContent .logo input::-moz-placeholder, .footer .footerContent .quickLinks input::-moz-placeholder {
+  color: white;
+}
+.footer .footerContent .logo input::placeholder, .footer .footerContent .quickLinks input::placeholder {
+  color: white;
+}
+.footer .footerContent .logo input:focus, .footer .footerContent .quickLinks input:focus {
+  border-color: white;
+}
+.footer .footerContent .logo button, .footer .footerContent .quickLinks button {
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.3rem;
+  margin-left: 2%;
+  font-family: var(--secondary-font);
+  color: black;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.footer .footerContent .logo button:hover, .footer .footerContent .quickLinks button:hover {
+  background-color: white;
+  color: #ff8000;
+  font-weight: 400;
+}
+.footer .footerContent .logo ul, .footer .footerContent .quickLinks ul {
+  width: -moz-fit-content;
+  width: fit-content;
+  list-style: none;
+}
+.footer .footerContent .logo ul a, .footer .footerContent .quickLinks ul a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--secondary-font);
+}
+.footer .footerContent .logo ul a li, .footer .footerContent .quickLinks ul a li {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin: 3px 0;
+}
+.footer .footerContent .logo ul a li:hover, .footer .footerContent .quickLinks ul a li:hover {
+  font-weight: 400;
+}
+.footer .footerContent .logo ul a li::before, .footer .footerContent .quickLinks ul a li::before {
+  content: "> ";
+}

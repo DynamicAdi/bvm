@@ -1,0 +1,141 @@
+@import "./../same";
+
+.screen {
+    @include full($h: 90vh);
+    // background-color: red;
+    @include flex(center, flex-start, column);
+    padding: 0px 2rem;
+    @include media(mobile, tablet) {
+        padding: 0px 1rem;
+        @include flex(flex-start, flex-start, column);
+        gap: 0px;
+    }
+    h1 {
+        font-weight: 900;
+        font-size: 4.2rem;
+        letter-spacing: -1%;
+        @include media(mobile, tablet) {
+            font-size: 2.2rem;
+            width: 100%;
+        }
+        @include media(tablet) {
+            font-size: 5rem;
+        }
+        span {
+            color: $primary;
+        }
+    }
+    p {
+        font-family: var(--secondary-font);
+        font-size: 1.6rem;
+        font-weight: 300;
+        width: 45%;
+        margin: 13px 0px 0px;
+        @include media(mobile, tablet) {
+            width: 100%;
+            font-size: 1.3rem;
+        }
+    }
+    h2 {
+        font-weight: 300;
+        font-size: 1.8rem;
+        letter-spacing: 0.5%;
+        span {
+            background: rgba(58, 253, 169, 0.56);
+            padding: 5px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-family: monospace;
+            &.first {
+                background: rgba(253, 133, 58, 0.56);
+            }
+            &.second {
+                display: none;
+                background: rgba(21, 0, 255, 0.412);
+            }
+            &.third {
+                display: none;
+                background: rgba(55, 255, 55, 0.518);
+            }
+        }
+    }
+    .button {
+        margin-top: 30px;
+        @include flex();
+        gap: 20px;
+   
+        
+.newBtn {
+  all: unset;
+  width: fit-content;
+  height: 30px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 1.4rem;
+  font-family: var(--secondary-font);
+  &.outline {
+      color: $black;
+      padding: 0.7rem 1.2rem;
+      font-weight: 500;
+   &::before {
+    background: transparent;
+    border: 2px solid $black;
+   }
+//    &::after {
+// }
+}
+  &::after, &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
+&::before {
+        width: 100%;
+        height: 100%;
+        background: $black;
+        border-radius: 10px;
+    
+}
+    &::after {
+        width: 0;
+        height: 0;
+        background-color: #ff800050;
+        // background: #ffffff15;
+        border-radius: 50px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    &:hover::before {
+        transform: translate(5%, 20%);
+        width: 110%;
+        height: 110%;
+    }
+    &:hover::after {
+        border-radius: 10px;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+    }
+    &:active::after {
+        transition: 0s;
+        transform: translate(0, 5%);
+    }
+    
+}
+}
+}
